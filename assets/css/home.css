@@ -1,0 +1,75 @@
+body
+{
+    height:100vh;
+    background:linear-gradient(black,grey)
+}
+
+.heading
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:50px;
+}
+
+.title
+{
+    color: #a5dce3;
+    font-family: cursive;
+    text-align: center;
+}
+
+.Add-Todo
+{
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 45px;
+}
+
+.list-todo
+{
+    width:80%;
+    margin: auto;
+}
+
+.todo-item
+{
+        width:100%;
+}
+
+.todo
+{
+    display: flex!important;
+    flex-direction: row;
+    flex-direction: wrap;
+    justify-content: space-around;
+    box-shadow: 1px 1px 2px 3px grey;
+    margin: 3px 4px;
+}
+
+.details
+{
+    width:70%;
+}
+
+.delete
+{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width:20%;
+}
+
+
+.delete-button
+{
+    text-align: center;
+    color:red;
+}
+

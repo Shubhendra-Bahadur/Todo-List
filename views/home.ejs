@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/home.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- font awsome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+    <title><%=title%></title>
+</head>
+
+<body>
+    <div class="heading">
+        <h1 class="title">Todo App</h1>
+    </div>
+    <form action='/add-todo' class="Add-Todo" method='POST'>
+
+        <div class="form-label-group">
+            <label for="inputtodo" class='text-light mb-1'>Todo</label>
+            <input type="text" id="inputtodo" name='todo' class="form-control mb-4" placeholder="Enter Todo" required=""
+                autofocus="">
+
+        </div>
+
+        <div class="form-label-group">
+            <label for="inputdescription" class='text-light mb-1'>Description</label>
+            <textarea type="text" id="inputdescription" name='description' class="form-control mb-4"
+                placeholder="Enter Description" required=""></textarea>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block add-button" type="submit"><i class="fas fa-plus mr-3"></i>Add
+            Todo</button>
+
+    </form>
+
+    <div class="list-todo">
+        <ul class="list-group mt-4 todo-item">
+            <%for(let i of todo_list){%>
+            <li class="list-group-item todo">
+                <div class="details">
+                    <p><strong>Todo :&nbsp;&nbsp;</strong><%=i.todo%></p>
+                    <p><strong>Description :&nbsp;&nbsp;</strong><%=i.description%></p>
+                </div>
+                <div class="delete">
+                    <a href="/delete-todo/?id=<%=i._id%>">
+                        <i class="fas fa-trash-alt delete-button"></i>
+                    </a>
+                </div>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
